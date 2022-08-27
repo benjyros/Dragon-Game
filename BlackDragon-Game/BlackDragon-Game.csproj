@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8746C14E-370D-4E8E-91C0-6B548A1ADAD2}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>BlackDragon_Game</RootNamespace>
+    <AssemblyName>BlackDragon-Game</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="highscore-listFast.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="highscore-listFast.Designer.cs">
+      <DependentUpon>highscore-listFast.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blackdragon-game.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blackdragon-game.Designer.cs">
+      <DependentUpon>blackdragon-game.cs</DependentUpon>
+    </Compile>
+    <Compile Include="blackdragon-interface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="blackdragon-interface.Designer.cs">
+      <DependentUpon>blackdragon-interface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="highscore-listNormal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="highscore-listNormal.Designer.cs">
+      <DependentUpon>highscore-listNormal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="highscore-listSlow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="highscore-listSlow.Designer.cs">
+      <DependentUpon>highscore-listSlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="user-login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user-login.Designer.cs">
+      <DependentUpon>user-login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="user-registration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="user-registration.Designer.cs">
+      <DependentUpon>user-registration.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="highscore-listFast.resx">
+      <DependentUpon>highscore-listFast.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blackdragon-game.resx">
+      <DependentUpon>blackdragon-game.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="blackdragon-interface.resx">
+      <DependentUpon>blackdragon-interface.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="highscore-listNormal.resx">
+      <DependentUpon>highscore-listNormal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="highscore-listSlow.resx">
+      <DependentUpon>highscore-listSlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="user-login.resx">
+      <DependentUpon>user-login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="user-registration.resx">
+      <DependentUpon>user-registration.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\arrow_keys.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\images\dragonEgg_new.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlackDragon-Game", "BlackDragon-Game\BlackDragon-Game.csproj", "{8746C14E-370D-4E8E-91C0-6B548A1ADAD2}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "BlackDragon-Setup", "BlackDragon-Setup\BlackDragon-Setup.vdproj", "{FB852FFD-6B16-4772-80A9-C7E48FF1DA9B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8746C14E-370D-4E8E-91C0-6B548A1ADAD2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8746C14E-370D-4E8E-91C0-6B548A1ADAD2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8746C14E-370D-4E8E-91C0-6B548A1ADAD2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8746C14E-370D-4E8E-91C0-6B548A1ADAD2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB852FFD-6B16-4772-80A9-C7E48FF1DA9B}.Debug|Any CPU.ActiveCfg = Debug
+		{FB852FFD-6B16-4772-80A9-C7E48FF1DA9B}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {259A1281-8C4E-4439-8CE7-BB57214E9AAC}
+	EndGlobalSection
+EndGlobal
