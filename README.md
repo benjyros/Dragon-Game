@@ -22,20 +22,85 @@ Ziele:
 
 - Die Gruppe soll ihre Arbeitspakete rechtzeitig abgeben
 
-## Beschreibung
+## Produkt
+### Beschreibung
 
 Bei Starten des Spiels kommt man in ein Interface, bei dem man sich einloggen bzw. registrieren muss. Nach dem Einloggen erhält man zuerst eine Instruktion, bei der man nachschauen kann, wie das Spiel und auch bestimmte Spielmodi funktionieren. Man hat drei verschiedene Optionen, wie schnell das Spiel laufen soll. Es gibt ausserdem auch eine Option, bei der man die Hintergrundfarbe des Spiels einstellen kann. 
 Das Design des Spiels haben wir mit einem Drachenthema belegt - deshalb auch unser Spielname "Blackdragon". Im Grunde genommen verhält sich das Spiel wie das bekannte Snake-Game. Die Bewegungen erfolgen durch die Pfeiltasten. Das Ziel ist es, so viel Punkte einzusammeln - pro "Drachenei" erhält man 100 Punkte. Falls man genug Punkte geholt hat, um in die Bestenliste zu gelangen, wird der Benutzername in der jeweiligen Kategorie (nach Geschwindigkeit kategorisiert) angezeigt. 
 An sich ist das Spiel simpel zu verstehen, aber wir möchten gerne in Zukunft auch noch andere Versionen dieses Spiels freigeben, bei der die Spielmodi hinzugefügt werden oder bei der auch andere Einstellungen und Features verfügbar sind.
 
-## Demo
+### Demo
 
 [![IMAGE ALT TEXT](http://img.youtube.com/vi/hwE9_iscyeM/0.jpg)](http://www.youtube.com/watch?v=hwE9_iscyeM "Dragon-Game")
 
-## Codeausschnitt
+## Das Projekt
+### Dateisystem
+
+![alt text](https://github.com/benjyros/Dragon-Game/blob/main/Images/dateisystem.PNG.png?raw=true)
+
+### Dateisystem erklärt
+
+Unter dem Ordner "Application Folder" werden alle nötigen Dateien des Spiels eingefügt. Hier in diesem Fall sind die .EXE-Datei selbst und die .EXE.config-Datei relevant. Die ico-Datei ist dafür da, um dem Spiel ein Bild zu geben. Unter dem Ordner "User's Desktop" wird eine Verknüpfung der .EXE-Datei eingefügt, damit das Spiel auch auf dem Desktop des Benutzers erreichbar ist. Ausserdem ist der Ordner "User's Programs Menu" auch sehr relevant, da das Spiel dort auf die Dateien zugreift. Diese Ordner und Dateien müssen in diesen Ordner eingefügt werden, sonst würde das Spiel nicht funktionieren. Ein kleiner Hinweis: Dass das Spiel richtig funktioniert, sollte das Spiel als Administrator ausgeführt werden. Der Grund dafür ist der Zugriff auf die Dateien.
+
+### System.IO
+
+Zu der neuen System.IO-Klasse war es eigentlich ganz einfach zu programmieren. Es war lediglich nur eine Linie von Programmcode, die das alles ausmachte. Mit "Path.GetFullPath(Environment.CurrentDirectory)" kann man einen bestimmten Ordner ausfindig machen, ohne eine absolute Pfadangabe anzugeben.
+
+### Beispiel System.IO
 
 ```cs
- 
+string baseRout = "";
+string saves = "";
+string settings = "";
+
+public user_login()
+{
+    InitializeComponent();
+    Get_Routes();
+}
+
+private void Get_Routes();
+{
+    baseRoute = Path.GetFullPath(Environment.CurrentDirectory);
+    saves = baseRoute + @"\saves";
+    settings = baseRoute + @\"settings";
+}
+```
+### Bestenliste erklärt
+
+Hier unten sieht man den Code, mit dem wir das Problem mit der Bestenliste gelöst haben. Mit einem zweiten Array, neben der .txt-Datei, haben wir die sortierte Bestenliste abgespeichert. Die höheren erzielten Punkte rutschen immer um eins nach oben, wenn die Punktzahl z.B. der zweiten Zeile grösser ist als die erste Zeile.
+
+## Code Bestenliste
+
+```cs
+private void Set_HighscoreList()
+{
+    //Reading highscore-list file (.txt)
+    string[] zeilen = File.ReadAllLines(highscoreListSlow);
+    stringArray = new string[zeilen.Length + 1];
+
+    //Copying the textfile into an array
+    for (int i = 0; i < zeilen.Length; i++)
+    {
+        stringArray[i + 1] = zeilen[i];
+    }
+    
+    //Sorting the array (if the upper value is smaller than the lower value of the array they change position)
+    for (int j = 0; j < zeilen.Length; j++)
+    {
+        for (int k = 1; k < zeilen.Length; k++)
+        {
+            if (Convert.ToInt32(stringArray[k].Split(';')[1]) < Convert.ToInt32(stringArray[k + 1].Split(';')[1]))
+            {
+                string temp = stringArray[k];
+                stringArray[k] = stringArray[k + 1];
+                stringArray[k + 1] = temp;
+            }
+        }
+    }
+
+    label_Assign();
+}
 ```
 
 ## Verifikation
